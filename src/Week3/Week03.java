@@ -1,5 +1,5 @@
 package Week3;
-
+import java.util.ArrayList;
 public class Week03 
 {
     public static final String CONSOLE_CLEAR = "\033[H\033[2J";
@@ -15,6 +15,24 @@ public class Week03
         System.out.println();
         System.out.println(" by Nicholas Day and Derek Peacock");
         System.out.println();
+
+        int id; 
+        Student nick = new Student (122111, "Nick");
+
+        Student onkar = new Student( 223245,  "Onkar");
+
+        Student uthman = new Student (0540054,  "Uthman");
+
+        ArrayList<Student> students = new ArrayList<Student>();
+        students.add (nick);
+        students.add(onkar);
+        students.add(uthman);
+
+        for (Student student :students)
+        {
+            student.print();
+            
+        }
     }     
     
 }
