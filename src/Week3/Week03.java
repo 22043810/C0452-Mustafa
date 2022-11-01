@@ -16,7 +16,7 @@ public class Week03
         System.out.println(" by Nicholas Day and Derek Peacock");
         System.out.println();
 
-        int id = 5; 
+       
         Student nick = new Student (122111, "Nick");
 
         Student onkar = new Student( 223245,  "Onkar");
