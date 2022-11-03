@@ -1,20 +1,40 @@
-public class Song 
-
-
 import java.util.ArrayList;
-import java.util.Iterator;
-import helpers.InputReader;
 
-public class Main {
-    public static void main(String[] args)
-    
-    {
-        Music Adele = new Song("Adele","Easy on Me", 314474560);
-        Music Adele = new Music
-    }
-    
-    
-    {
-        System.out.println("Mustafa's CW1");
-    }
+
+public class Song 
+{
+private String song;
+private String artistname;
+private int date;
+private int views;
+
+
+public Song(String song, String artistname, int date, int views)
+
+{
+this.song = song;
+this.artistname = artistname;
+this.date = date;
+this.views = views;
 }
+
+public void print()
+{
+    System.out.println ("song: " + this.song + "\tartistname:" + this.artistname + "\tdate:" + this.date + "\tviews:"  + this.views);
+
+}
+public String getsong()
+
+{
+return song;
+}
+
+public int getviews()
+{return views;
+}
+
+}
+
+
+
+
