@@ -19,6 +19,27 @@ public class Main {
         Song Adele = new Song ("Adele", "Skyfall", 509105041);
         Song Adele = new Song ("Adele", "Water Under the Bridge", 154492);
         Song Adele = new Song ("Adele", "I Drink Wine", 13021566 );
+
+
+        ArrayList<Song> songs = new ArrayList<Music>();
+        songs.add(Adele);
+
+        //PrintList(songs);
+        System.out.println(CONSOLE_CLEAR);
+
+        String opening = InputReader.getString ("\tWould you like to see a list of songs? yes/no ");
+        opening.toLowerCase();
+        if (opening.equals("y") || opening.equals("yes"))
+{
+    for (Song song : songs)
+    { song.print() }
+
+}
+
+{
+    String countlist = InputReader.getString("\twould you like to see songs listed by the views? yes/no");
+    
+}
     }
     
     
