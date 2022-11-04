@@ -18,6 +18,9 @@ this.date = date;
 this.views = views;
 }
 
+public Song(String string, String string2, int i) {
+}
+
 public void print()
 {
     System.out.println ("song: " + this.song + "\tartistname:" + this.artistname + "\tdate:" + this.date + "\tviews:"  + this.views);
