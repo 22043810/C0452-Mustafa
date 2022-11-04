@@ -1,11 +1,11 @@
-public class CW1 
+package Week5;
 import java.util.ArrayList;
 import java.util.Iterator;
+
 import helpers.InputReader;
-
 public class CW1
-
  {
+    public static final String CONSOLE_CLEAR = "\033[H\033[2J";
     public static void main(String[] args)
     {
         Song Adele = new Song ("Adele","Easy On Me", 314474560);
@@ -13,7 +13,7 @@ public class CW1
         Song Carlo = new Song ("Adele", "Rolling In The Deep", 2109190457);
         Song Adam = new Song ("Adele", "Love In The Dark", 32920629 );
         Song Bruno= new Song ("Adele", "When We Were Young", 32565591);
-        Song Carl = new Song ("Adele", "Hello", 3019195566);
+        Song Carl = new Song ("Adele", "Hello", 301919556);
         Song Adolf = new Song ("Adele", "Someone Like You", 1924224127);
         Song Kurt = new Song ("Adele", "Skyfall", 509105041);
         Song Mofasa = new Song ("Adele", "Water Under the Bridge", 154492);
@@ -40,12 +40,12 @@ String remove = InputReader.getString("\tto remove a song simply type the name o
 remove.toLowerCase();
 for (Song song : songs)
 {
-    if(song.getname().toLowerCase().contains(remove))
+    if(song.getsong().toLowerCase().contains(remove))
     {
-        System.out.println(remove + " " + song.getname());
+        System.out.println(remove + " " + song.getsong());
         songs.remove(song);
         System.out.println(" song was found and successfully removed. ");
-        PrintList(songs);
+        printList(songs);
     }
 else
 System.out.println(" song could not be found.");
@@ -63,20 +63,22 @@ System.out.println(" song could not be found.");
     public static void PrintListByCount(ArrayList<Song> localSongs)
     {
                 int howLong = localSongs.size();
-        for (int highest= 0 ; highest< howLong; highgest++)
+        int highgest;
+        for (int highest= 0 ; highest< howLong; lowest--)
     {
-            Song temporary = new Song("", ",0");
+            Song temporary = new Song("", ",0", highest);
             int highhestNumber=0;
             for (Song song : localSongs)
             {
-                if (highestNumber < song.getviews())
+                int highestNumber;
+                if (highest < song.getviews())
                 {
                     highestNumber = song.getviews();
                     temporary = song;
                 }
             }
             temporary.print();
-            localsongs.remove(temporary);
+            localSongs.remove(temporary);
         }
     
     }
