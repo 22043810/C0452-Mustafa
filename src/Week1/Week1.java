@@ -1,6 +1,6 @@
 package Week1;
 
-import helpers.InputReader;
+import Week5.InputReader;
 public class Week1 
 {
     public static final String CONSOLE_CLEAR = "\033[H\033[2J";

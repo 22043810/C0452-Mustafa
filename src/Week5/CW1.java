@@ -1,26 +1,37 @@
 package Week5;
 import java.util.ArrayList;
-import java.util.Iterator;
-
 import helpers.InputReader;
+
 public class CW1
  {
     public static final String CONSOLE_CLEAR = "\033[H\033[2J";
     public static void main(String[] args)
     {
-        Song Adele = new Song ("Adele","Easy On Me", 314474560);
-        Song Bob = new Song ("Adele","Set Fire To The Rain", 724013122);
-        Song Carlo = new Song ("Adele", "Rolling In The Deep", 2109190457);
-        Song Adam = new Song ("Adele", "Love In The Dark", 32920629 );
-        Song Bruno= new Song ("Adele", "When We Were Young", 32565591);
-        Song Carl = new Song ("Adele", "Hello", 301919556);
-        Song Adolf = new Song ("Adele", "Someone Like You", 1924224127);
-        Song Kurt = new Song ("Adele", "Skyfall", 509105041);
-        Song Mofasa = new Song ("Adele", "Water Under the Bridge", 154492);
-        Song Justin= new Song ("Adele", "I Drink Wine", 13021566 );
+        Song easyonme = new Song ("Easy On Me","Adele", 2021, 314474560);
+        Song setfiretotherain = new Song ("Set Fire To The Rain","Adele",2011, 724013122);
+        Song rollinginthedeep = new Song ("Rolling In The Deep", "Adele",2010, 2109190457);
+        Song loveinthedark = new Song ("Love In The Dark", "Adele",2019, 32920629);
+        Song whenwewereyoung= new Song ("When We Were Young", "Adele",2015, 32565591);
+        Song hello = new Song ("Hello", "Adele",2015, 301919556);
+        Song someonelikeyou = new Song ("Someone Like You", "Adele",2011, 1924224127);
+        Song skyfall = new Song ("Skyfall", "Adele",2012, 509105041);
+        Song waterunderthebridge = new Song ("Water Under The Bridge", "Adele",2017, 154492);
+        Song idrinkwine= new Song ("I Drink Wine", "Adele",2022, 13021566 );
         ArrayList<Song> songs = new ArrayList<Song>();
-        songs.add(Adele);
-        //PrintList(songs);
+
+        songs.add(easyonme);
+        songs.add(setfiretotherain);
+        songs.add(rollinginthedeep);
+        songs.add(loveinthedark);
+        songs.add(whenwewereyoung);
+        songs.add(hello);
+        songs.add(someonelikeyou);
+        songs.add(skyfall);
+        songs.add(waterunderthebridge);
+        songs.add(idrinkwine);
+
+
+       //PrintList(songs); 
         System.out.println(CONSOLE_CLEAR);
         String opening = InputReader.getString ("\tWould you like to see a list of songs? yes/no ");
         opening.toLowerCase();
@@ -29,26 +40,21 @@ public class CW1
     for (Song song : songs)
     { song.print(); }
 }
-String views = InputReader.getString("\twould you like to see songs listed by its views? ");
-views.toLowerCase();
-if (views.equals("y")  || views.equals("yes"))
-{  
-    System.out.println("\t Songs Listed By Views: ");
-    PrintListByCount(songs);
-}
+
 String remove = InputReader.getString("\tto remove a song simply type the name of a song:");
 remove.toLowerCase();
 for (Song song : songs)
 {
-    if(song.getsong().toLowerCase().contains(remove))
+    if(song.getname().toLowerCase().contains(remove))
     {
-        System.out.println(remove + " " + song.getsong());
+        System.out.println(remove + " " + song.getname());
         songs.remove(song);
         System.out.println(" song was found and successfully removed. ");
         printList(songs);
     }
-else
+else{
 System.out.println(" song could not be found.");
+}
 }
 
     }
@@ -63,14 +69,12 @@ System.out.println(" song could not be found.");
     public static void PrintListByCount(ArrayList<Song> localSongs)
     {
                 int howLong = localSongs.size();
-        int highgest;
-        for (int highest= 0 ; highest< howLong; lowest--)
+        for (int highest= 0 ; highest< howLong; highest++ )
     {
-            Song temporary = new Song("", ",0", highest);
-            int highhestNumber=0;
+            Song temporary = new Song("", ",0", highest, highest);
+            int highestNumber=0;
             for (Song song : localSongs)
             {
-                int highestNumber;
                 if (highest < song.getviews())
                 {
                     highestNumber = song.getviews();
