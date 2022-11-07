@@ -5,42 +5,36 @@ public class Song {
     
 private String song;
 private String artistname;
-private int date;
-private int views;
+private int playcount;
 
 //Constructor
-public Song(String song, String artistname, int date, int views)
+public Song(String song, String artistname, int playcount)
 {
 this.song = song;
 this.artistname = artistname;
-this.date = date;
-this.views = views;
+this.playcount = playcount;
 }
-
 
 //print method
 public void print()
 {
-    System.out.println ("song: " + this.song + "\tartistname:" + this.artistname + "\tdate:" + this.date + "\tviews:"  + this.views);
+    System.out.print ("Song: " + this.song + "\t");
+    System.out.print("Artistname: " + this.artistname + "\t");
+    System.out.print("Playcount: " + this.playcount + "\t");
 }
 
-
-public String getname() {
-	return artistname;
-}
-
-public int getdate()
-{
-    return date;
-}
-
-public int getviews() {
-    return views;
+public int getcount() {
+    return playcount;
 }
 
 
 public String getsong() {
     return song;
+}
+
+
+public String getname() {
+    return null;
 }
 
 }
