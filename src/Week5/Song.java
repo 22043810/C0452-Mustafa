@@ -1,18 +1,21 @@
 package Week5;
-import java.util.ArrayList;
 
-public class Song {
-    
+public class Song 
+{
+
 private String song;
 private String artistname;
 private int playcount;
 
 //Constructor
-public Song(String song, String artistname, int playcount)
+public Song (String song, String artistname,int playcount)
 {
 this.song = song;
 this.artistname = artistname;
 this.playcount = playcount;
+}
+
+public Song(String song2, int count) {
 }
 
 //print method
@@ -23,19 +26,19 @@ public void print()
     System.out.print("Playcount: " + this.playcount + "\t");
 }
 
-public int getcount() {
+public int getnumber() {
     return playcount;
 }
 
-
-public String getsong() {
+public String getsong(){
     return song;
 }
 
-
-public String getname() {
-    return null;
+public String getartistname() {
+return artistname;
 }
+
+
 
 }
 
