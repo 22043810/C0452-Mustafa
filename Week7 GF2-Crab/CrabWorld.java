@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.Random;
 
 /**
  * Write a description of class MyWorld here.
@@ -9,14 +10,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class CrabWorld extends World
 {
     public static final int MAXN_WORMS = 20;
+    public static final int MAXN_LOBSTERS = 20;
     
     private Crab crab;
     private Lobster lobster;
     
     private Worm[] worms;
-    private int wormSize;
+    private int wormSize = 30;
     private int remainingWorms = MAXN_WORMS;
     
+    private Random generator = new Random();
     private Counter score;
     
     /**
@@ -35,8 +38,6 @@ public class CrabWorld extends World
         addObject(lobster, 600, 400);
         
         worms = new Worm[MAXN_WORMS];
-        
-        wormSize = 30;
         addWorms();
         
         setupScore();
@@ -47,6 +48,15 @@ public class CrabWorld extends World
      */
     public void addWorms()
     {
+        for(int i = 0; i < MAXN_WORMS; i++)
+        {
+            createWorm();
+        }
+        
+        for(int i = 0; i < MAXN_LOBSTERS; i++)
+        {
+            createLobster();
+        }
 
     }
     
@@ -54,10 +64,30 @@ public class CrabWorld extends World
      * This method creates & adds a single worm to a random position in
      * the world that is not too near the edge of the screen
      */
-    private void createWorm(int number)
+    private void createWorm()
     {
+        Worm worm = new Worm();
+        
+        int x = generator.nextInt(getWidth());
+        int y = generator.nextInt(getHeight());
+        
+        addObject(worm, x, y);
     }
-    
+    private void createLobster()
+    {
+        Lobster lobster = new Lobster();
+        
+        int x;
+        int y;
+        do
+        {
+            
+            x = generator.nextInt(getWidth());
+            y = generator.nextInt(getHeight());
+        }
+        while(x < 50 || y< 50 || x> getWidth() - 50 || y > getHeight() - 50);
+        addObject(lobster, x, y);
+    }
     public void score()
     {
     }

@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Crab extends Actor
+public class Crab extends Animal
 {
     protected int width;
     protected int height;
@@ -36,7 +36,11 @@ public class Crab extends Actor
      */
     public void act()
     {
-        move4Ways();  // or moveAndTurn
+        turnAndMove();
+        if ( eat(Worm.class) == true)
+        {
+            Greenfoot.playSound("slurp.wav");
+        }
     }
     
     /**
@@ -44,8 +48,31 @@ public class Crab extends Actor
      * left or to the right, and then the worm moves in that
      * direction
      */
-    public void moveAndTurn()
+    public void turnAndMove()
     {
+        if(Greenfoot.isKeyDown("left"))
+        {
+            turn(-turnAngle);
+            move(speed);
+        }
+        
+        if(Greenfoot.isKeyDown("right"))
+        {
+            turn(turnAngle);
+            move(speed);
+        }
+        
+        if(Greenfoot.isKeyDown("up"))
+        {
+            turn(turnAngle);
+            move(speed);
+        }
+        
+        if(Greenfoot.isKeyDown("down"))
+        {
+            turn(turnAngle);
+            move(speed);
+        }
     }
     
     /**
